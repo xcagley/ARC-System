@@ -1,0 +1,18 @@
+1: Create the classes needed for the System
+  1a: Create the Standard Player Class
+    i: Create 2 Players
+    ii: Test by printing their information to the screen
+      ***: Life Points, Hand Size, Graveyard Size, Banishment Size, Cards on the field
+  1b: Create the Card Class
+    i: Create a card and have it's information print
+2: Build a function that starts and connects to the SQL Server
+  2a: Test with pulling a card's information and displaying info
+3: Build a function that does the basic/easy effects of some cards (ex: Hinotama, Goblin's Secret Remedy)
+  3a: Want to have the modifiers of the Function be based on special_card_frame -> card_frame -> name
+  3b: Test by using Hinotama and or Goblin's Secret Remedy
+    **: Will need to expand the effect funtion later when the voice commands are properly created
+4: Build the LIFO/Chaining function
+  4a: Start with basic LIFO program
+  4b: Expand to a basic event LIFO function
+  4c: Implement Event LIFO function into the ARC System
+    i: Test by summoning a monster and using Trap Hole
