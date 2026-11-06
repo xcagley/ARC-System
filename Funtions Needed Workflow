@@ -1,0 +1,69 @@
+Functions needed to make the ARC System
+When more are needed to be added they will. 
+General thoughts and ideas will be added (these will be completely wrong syntax and postion wise)
+
+
+Phases:
+	Draw Phase
+		Hand Size +1
+		Might not be needed (who knows)
+	Standby Phase
+		-This just has the listeners for effects
+	Main 1
+		Allow for cards to be summoned or set via button presses
+		Allow for cards to be activated via button presses
+	Battle Phase
+		Attack Declaration
+		Battle Step
+		Damage Step
+		Destroy Monster
+	Main 2
+		Allow for cards to be summoned or set via button presses
+		Allow for cards to be activated via button presses
+	End
+		Change the turn player and increase the turn counter by one
+
+Turn Counter
+  Start from 0 and on every turn change +1 to the variable
+Chain Builder and Chain Resolution
+  Every action starts the chain at chain 0
+  This is a LIFO system
+  For practice/development, will need to create a few test LIFO systems and then build up to an Event based LIFO setup
+
+Classes
+	PlayerCreation
+		PlayerCreation player1
+		PlayerCreation player2
+		Card[] Hand; //Might not be needed overall
+		Card[] MonsterZones;
+		Card[] SpellTrapZones;
+		Card[] Banished;
+		Card[] Graveyard;
+	Phases
+		int Draw = 1;
+		int Standby = 2;
+		int Main1 = 3;
+		int Battle = 4;
+		int Main2 = 5;
+		int End = 6;
+	Card
+		string Name;
+		string Card_Frame; (Ex: Spell, Trap, Effect, Normal)
+    string Special_Card_Frame; ( Ritual, Fusion, XYZ, Link, Synchro)
+		string Attribute; (Ex: Light, Dark, Spell, Trap, Earth, Fire, Water, Wind)
+		string Type; (Ex: Spell and Trap types, Warrior, Dragon, Pyro, Aqua, Plant, Zombie, etc)
+		int Atk;
+    bool unoriginalAtk; (True means the attack points are no longer their original value)
+		int Def;
+    bool unoriginalDef; (True means the defense points are no longer their original value)
+		bool Flip; (True means interactions will need a check to flip the Monster if needed such as: Attacking, changing position, effect forcing a position change)
+		int Position; (1 = Face-Up Attack, 2 = Face-Up Defense, 3 = Face-Down Defense)
+		bool CanAttack; (All Monsters with Position 1 are marked true at turn change and marked false after attacking)
+		bool SpecialSummoned;
+Voice Commands (Using ReGex)
+	Used to change phases
+    During phase changes, run a check if the desired phase value is higher than current value
+	Used for targeting for effects
+	Used for selecting attacks
+Effects (Need Card_Frame, Name)
+	Switch statement based on Card_Frame then by Name
