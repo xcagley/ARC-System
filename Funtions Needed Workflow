@@ -49,17 +49,18 @@ Classes
 	Card
 		string Name;
 		string Card_Frame; (Ex: Spell, Trap, Effect, Normal)
-    string Special_Card_Frame; ( Ritual, Fusion, XYZ, Link, Synchro)
+    	string Special_Card_Frame; ( Ritual, Fusion, XYZ, Link, Synchro)
 		string Attribute; (Ex: Light, Dark, Spell, Trap, Earth, Fire, Water, Wind)
 		string Type; (Ex: Spell and Trap types, Warrior, Dragon, Pyro, Aqua, Plant, Zombie, etc)
 		int Atk;
-    bool unoriginalAtk; (True means the attack points are no longer their original value)
+    	bool unoriginalAtk; (True means the attack points are no longer their original value)
 		int Def;
-    bool unoriginalDef; (True means the defense points are no longer their original value)
+    	bool unoriginalDef; (True means the defense points are no longer their original value)
 		bool Flip; (True means interactions will need a check to flip the Monster if needed such as: Attacking, changing position, effect forcing a position change)
 		int Position; (1 = Face-Up Attack, 2 = Face-Up Defense, 3 = Face-Down Defense)
 		bool CanAttack; (All Monsters with Position 1 are marked true at turn change and marked false after attacking)
 		bool SpecialSummoned;
+		PlayerCreation Owner;
 Voice Commands (Using ReGex)
 	Used to change phases
     During phase changes, run a check if the desired phase value is higher than current value
