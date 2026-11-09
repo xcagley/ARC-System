@@ -1,8 +1,8 @@
-1: Create the classes needed for the System
+1: Create the 2 major classes needed for the System
   1a: Create the Standard Player Class
     1i: Create 2 Players
     1ii: Test by printing their information to the screen
-      ***: Life Points, Hand Size, Graveyard Size, Banishment Size, Cards on the field
+      ***: Life Points, Hand Size, Graveyard Size, Banishment Size, Zones and the empty values they will hold
   1b: Create the Card Class
     1i: Create a card and have it's information print
 	1ii: Create multiple cards and populate the zones/arrays
@@ -13,18 +13,23 @@
 		2iii: Test by printing the global variable information after the function 
   2b: Test by pulling 1 card's information and displaying info after calling the function
 		2i: Test by printing all card information in server (maybe)
-3: Build a function that does the basic/easy effects of some cards (ex: Hinotama, Goblin's Secret Remedy)
-  3a: Want to have the modifiers of the Function be based on special_card_frame -> card_frame -> name
-  3b: Test by using Hinotama and or Goblin's Secret Remedy
-    3i: Will need to expand the effect funtion later when the voice commands are properly created
-4: Build the LIFO/Chaining function
-  4a: Start with basic LIFO program
-  4b: Expand to a basic event LIFO function
-  4c: Implement Event LIFO function into the ARC System
-    4i: Test by summoning a monster and using Trap Hole
-5: Build the Turn Manager (may need to be a class as well)
-	5a: Create the increate in the turn counter
-	5b: Create the change of Turn Player
-6: Build the voice commands (Using RegEx)
-	5a: Build the listeners for moving through the phases
+3: Build the Turn Manager (may need to be a class as well)
+	3a: Create the increate in the turn counter
+	3b: Create the change of Turn Player
+4: Build a function that does the basic/easy effects of some cards (ex: Hinotama, Goblin's Secret Remedy)
+  4a: Want to have the modifiers of the Function be based on special_card_frame -> card_frame -> name
+  4b: Test by using Hinotama and or Goblin's Secret Remedy
+    4i: Will need to expand the effect funtion later when the voice commands are properly created
+5: Enhance the effect function to include equip and continuous effects
+	5a: This will include the need to have a array/list of effects that are active
+		5i: This list will need to be called/referenced after every interaction
+			*: Main focuses regarding this: Field Spells, Swords of Revealing Light
+6: Build the LIFO/Chaining function
+  6a: Start with basic LIFO program
+  6b: Expand to a basic event LIFO function
+  6c: Implement Event LIFO function into the ARC System
+    6i: Test by summoning a monster and using Trap Hole
+
+7: Build the voice commands (Using RegEx)
+	7a: Build the listeners for moving through the phases
 x: Work on Card Recognition
