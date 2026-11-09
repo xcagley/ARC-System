@@ -23,8 +23,11 @@ Phases:
 	End
 		Change the turn player and increase the turn counter by one
 
-Turn Counter
-  Start from 0 and on every turn change +1 to the variable
+Turn Manager
+	Handles the Turn Counter
+		Start from 0 and on every turn change +1 to the variable
+	Handles the chaning of whose turn it is
+
 Chain Builder and Chain Resolution
   Every action starts the chain at chain 0
   This is a LIFO system
