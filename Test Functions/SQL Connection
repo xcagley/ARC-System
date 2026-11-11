@@ -1,0 +1,84 @@
+using Microsoft.Data.SqlClient;
+namespace SQL_Connection
+{
+    public class SQLConn
+    {
+        public string connectionString { get; set; }
+        public SQLConn()
+        {
+            connectionString = @"Server=*Server Name(Sometimes local machine)*;Database=*Database used*;Trusted_Connection=True;TrustServerCertificate=True;";
+            //Trusted_Connection and TrustServerCertificate are here as the database is held on the local machine. Otherwise, the variables are user: and password: requiring sign-in values
+
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Create the server connection
+            //This will be done when the system starts
+            //During the creation/build, this will probably be ran when the start button is clicked
+            //Start button will be used as a placeholder for turning on the ARC Band
+            SQLConn connectionString = new SQLConn();
+            var connection = new SqlConnection(connectionString.connectionString);
+            connection.Open();
+
+
+            //This is used to get all the information for each card and store them in a tmp variable
+            //This will most likely be changed due to how the recognition will be changed
+            //Old recognition only worked for one card at a time
+            //New recognition will be using YOLO for multi-card recogntion
+            //Most likely this will be used for when the card is played rather than when recognized
+
+            //This is the querystring used to get the specific name related to the card recognized
+            string querystring = "select * from dbo.*table* where Name = @Name";
+
+            //This is the test querystring to verify the connection to the database is working
+            //string querystring = "select * from dbo.*table*";
+            using (SqlCommand command = new SqlCommand(querystring, connection))
+            {
+                //This command paramater sets the search to the recognized card
+                command.Parameters.AddWithValue("@Name", tmpCard);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    //test to see if all cards can be read in
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader["Name"].ToString());
+                    }
+                    //regular expression that will be used
+                    if (reader.Read()) 
+                    {
+                        //tmpCard and Card will be populated and contextualized with the classes made
+                        tmpCard = new Card(
+                        reader["Name"].ToString(),
+                        reader["Card_frame"].ToString(),
+                        reader["Special_Card_frame"].ToString(),
+                        reader["Attribute"].ToString(),
+                        reader["Type"].ToString(),
+                        Convert.ToInt32(reader["Atk"]),
+                        //if their attack is not their original value
+                        false,
+                        Convert.ToInt32(reader["Def"]),
+                        //If their defense is not their original value
+                        false,
+                        /*If they are in attack mode
+                         True = Attack Mode
+                        False = Defense Mode*/
+                        true,
+                        //If they can Attack
+                        true,
+                        //If the card was special summoned
+                        false
+                        //Owner of the card
+                        //Will need to work on more
+                        //May be able to create an if statement based on the button press
+                            );
+                    }
+                }
+            }
+        }
+    }
+}
+
+
