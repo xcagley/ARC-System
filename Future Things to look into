@@ -1,1 +1,3 @@
 Ability to create deck list, generates txt file. If txt file exists, card recognition goes based on the list rather than the overall amount of cards
+
+Extra Deck Monster Zones being added to the system
