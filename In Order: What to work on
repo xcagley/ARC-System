@@ -1,3 +1,7 @@
+Develop everything as if it is a basic computer game of YuGiOh and then add the more important items: Voice Commands, Image Recognition
+	-This means that the interactions will need to be setup to ask for the targets and take input
+	-This will end up allowing for easier work to be done as each player can be set to the bare minimum amount of LP needed to win
+
 ==========================================================================================================================================================================================
 COMPLETED
 1: Create the 2 major classes needed for the System 
@@ -38,6 +42,7 @@ COMPLETED
 	5a: This will include the need to have a array/list of effects that are active
 		5i: This list will need to be called/referenced after every interaction
 			*: Main focuses regarding this: Field Spells, Swords of Revealing Light
+	5b: Add a list element to Card class called effected by
 6: Build the LIFO/Chaining function
   6a: Start with basic LIFO program
   6b: Expand to a basic event LIFO function
