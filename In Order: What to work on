@@ -1,4 +1,6 @@
-1: Create the 2 major classes needed for the System
+==========================================================================================================================================================================================
+COMPLETED
+1: Create the 2 major classes needed for the System 
   1a: Create the Standard Player Class
     1i: Create 2 Players
     1ii: Test by printing their information to the screen
@@ -13,14 +15,26 @@
 		2iii: Test by printing the global variable information after the function 
   2b: Test by pulling 1 card's information and displaying info after calling the function
 		2i: Test by printing all card information in server (maybe)
+==========================================================================================================================================================================================
+==========================================================================================================================================================================================
+IN PROGRESS
 3: Build the Turn Manager (may need to be a class as well)
 	3a: Create the increate in the turn counter
 	3b: Create the change of Turn Player
+==========================================================================================================================================================================================
+==========================================================================================================================================================================================
+COMPLETED
 4: Build a function that does the basic/easy effects of some cards (ex: Hinotama, Goblin's Secret Remedy)
-  4a: Want to have the modifiers of the Function be based on special_card_frame -> card_frame -> name
-  4b: Test by using Hinotama and or Goblin's Secret Remedy
-    4i: Will need to expand the effect funtion later when the voice commands are properly created
-5: Enhance the effect function to include equip and continuous effects
+	4a: Create a basic switch statement to get to the specific card
+		4i: Test with different cards and their effects
+	4b: Take the switch statement and turn it into a function
+		4i: Have the initial modifier be just the name
+		4ii: Try to make the adjustment to 4c right away if possible
+	4c: Want to have the modifiers of the Function be based on special_card_frame -> card_frame -> name
+	4d: Test by using Hinotama and or Goblin's Secret Remedy
+		4i: Will need to expand the effect funtion later when the voice commands are properly created
+==========================================================================================================================================================================================
+5: Enhance functionaliaty of 4 to include equip and continuous effects
 	5a: This will include the need to have a array/list of effects that are active
 		5i: This list will need to be called/referenced after every interaction
 			*: Main focuses regarding this: Field Spells, Swords of Revealing Light
