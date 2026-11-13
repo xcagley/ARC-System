@@ -1,0 +1,1142 @@
+using System.Collections.Generic;
+using System.Xml.Linq;
+//build using the idea of an analog game first and then we will update it to have voice controls and the recognized cards
+namespace CardEffects
+{
+    public class Card
+    {
+        /*
+         * Created the class for all cards
+         * More variables and items can be added/adjusted if and when needed
+         */
+        public string Name { get; set; }
+        public string Card_Frame { get; set; } //(Ex: Spell, Trap, Effect, Normal)
+        public string Special_Card_Frame { get; set; } //(Ritual, Fusion, XYZ, Link, Synchro)
+        public string Attribute { get; set; } //(Ex: Light, Dark, Spell, Trap, Earth, Fire, Water, Wind)
+        public string Type { get; set; } //(Ex: Spell and Trap types, Warrior, Dragon, Pyro, Aqua, Plant, Zombie, etc)
+        public int Atk { get; set; }
+        public bool unoriginalAtk { get; set; } //(True means the attack points are no longer their original value)
+        public int Def { get; set; }
+        public bool unoriginalDef { get; set; } //(True means the defense points are no longer their original value)
+        public bool Flip { get; set; } //(True means interactions will need a check to flip the Monster if needed such as: Attacking, changing position, effect forcing a position change)
+        public int Position { get; set; } //(1 = Face-Up Attack, 2 = Face-Up Defense, 3 = Face-Down Defense)
+        public bool CanAttack { get; set; } //(All Monsters with Position 1 are marked true at turn change and marked false after attacking)
+        public bool SpecialSummoned { get; set; }
+        public DuelistCreation Owner { get; set; }
+
+        public Card(string name, string card_frame, string special_card_frame, string attribute, string type, int atk, bool unoriginalatk, int def, bool unoriginaldef, bool flip, int position, bool canattack, bool specialsummoned, DuelistCreation owner)
+        {
+            Name = name;
+            Card_Frame = card_frame;
+            Special_Card_Frame = special_card_frame;
+            Attribute = attribute;
+            Type = type;
+            Atk = atk;
+            unoriginalAtk = unoriginalatk;
+            Def = def;
+            unoriginalDef = unoriginaldef;
+            Flip = flip;
+            Position = position;
+            CanAttack = canattack;
+            SpecialSummoned = specialsummoned;
+            Owner = owner;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = "Hinotama";
+            string card_frame = "Spell";
+            CardEffects(card_frame, name);
+        }
+        static void CardEffects(string card_frame, string name)
+        {
+            char firstletter;
+
+            if (card_frame == "Trap")
+            {
+                switch (firstletter = name[0])
+                {
+                    case 'A':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'B':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'C':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'D':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'E':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'F':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'G':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'H':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'I':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'J':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'L':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'M':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'N':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'O':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'P':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'Q':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'R':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'S':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'T':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'U':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'V':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'W':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'X':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'Y':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'Z':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '1':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '2':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '3':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '4':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '5':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '6':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '7':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '8':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '9':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    default: //0
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                }
+            }
+            /*
+            else if (card_frame == "Spell")
+            {
+                switch (firstletter = name[0])
+                {
+                    case 'A':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'B':
+                        switch (name)
+                        {
+                            case "Beast Fangs":
+                                //Equip Spell
+                                //Need to complete later with upgrade
+                                //Basic Work =
+                                if (card.type == "Beast")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Book of Secret Arts":
+                                //Equip Spell
+                                //Need to complete later with upgrade
+                                if (card.type == "Spellcaster")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'C':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'D':
+                        switch (name)
+                        {
+                            case "Dark Energy":
+                                //Equip Spell
+                                //Need to complete later with upgrade
+                                if (card.type == "Fiend")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Dark Hole":
+                                for (int x = 0; x < 5; x++)
+                                {
+                                    duelist1.Graveyard.Add(MonsterZone[x]);
+                                    duelist1.MonsterZone[x] = null;
+                                    duelist2.Graveyard.Add(MonsterZone[x]);
+                                    duelist2.MonsterZone[x] = null;
+                                }
+                                break;
+                            case "Dragon Treasure":
+                                //Equip Spell
+                                //Need to complete later with upgrade
+                                if (card.type == "Dragon")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'E':
+                        switch (name)
+                        {
+                            case "Electro-Whip":
+                                //Equip Spell
+                                //Need to complete later with upgrade
+                                if (card.type == "Thunder")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'F':
+                        switch (name)
+                        {
+                            case "Final Flame":
+                                tm.Oppenent.LP -= 600;
+                                break;
+                            case "Fissure":
+                                int lowestAttack = 0;
+                                for (int x = 1; x < 5; x++)
+                                {
+                                    if (tm.Opponent.MonsterZone[x] == null)
+                                    { continue; }
+                                    else
+                                    {
+                                        if (tm.Oppenent.MonsterZone[x].Atk < tm.Oppenent.MonsterZone[lowestAttack].Atk)
+                                        {
+                                            lowestAttack = x;
+                                        }
+                                    }
+                                }
+                                tm.Opponent.Graveyard.Add(MonsterZone[lowestAttack]);
+                                tm.Opponent.MonsterZone[lowestAttack] = null;
+                                break;
+                            case "Follow Wind":
+                                //Equip Spell
+                                //Need to complete later with upgrade
+                                if (card.type == "Winged Beast")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Forest":
+                                //Field Spell
+                                //Need to complete later with upgrade
+                                //Basic Work
+                                if (card.type == "Insect" || card.type == "Beast" || card.type == "Plant" ||
+                                    card.type == "Beast-Warrior")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'G':
+                        switch (name)
+                        {
+                            case "Goblins Secret Remedy":
+                                tm.TurnPlayer.LP += 600;
+                                break;
+                            case "Gravedigger Ghoul":
+                                string target1, target2;
+                                target1 = "";
+                                target2 = "";
+                                tm.Opponent.Banished.Add(target1);
+                                tm.Opponent.Graveyard.Remove(target1);
+                                tm.Opponent.Banished.Add(target2);
+                                tm.Opponent.Graveyard.Remove(target2);
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'H':
+                        switch (name)
+                        {
+                            case "Hinotama":
+                                tm.Opponent.LP -= 500;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'I':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'J':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'L':
+                        switch (name)
+                        {
+                            case "Laser Cannon Armor":
+                                if (card.type == "Insect")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Legendary Sword":
+                                if (card.type == "Warrior")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'M':
+                        switch (name)
+                        {
+                            case "Machine Conversion Factory":
+                                if (card.type == "Machine")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Monster Reborn":
+                                Card target.name = "";
+                                target.Owner.Graveyard.Remove(target);
+                                target.Owner = tm.TurnPlayer;
+                                break;
+                            case "Mountain":
+                                if (card.type == "Dragon" || card.type == "Winged Beast" || card.type == "Thunder")
+                                {
+                                    card.Atk += 200;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 200;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Mystic Moon":
+                                if (card.type == "Beast-Warrior")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'N':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'O':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'P':
+                        switch (name)
+                        {
+                            case "Polymerization":
+                                //This is weird and will need more thought put in this
+                                break;
+                            case "Pot of Greed":
+                                tm.TurnPlayer.Hand.Size += 2;
+                                break;
+                            case "Power of Kaishin":
+                                if (card.type == "Aqua")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'Q':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'R':
+                        switch (name)
+                        {
+                            case "Raigeki":
+                                for (int x = 0; x < 5; x++)
+                                {
+                                    tm.Opponent.Graveyard.Add(MonsterZone[x]);
+                                    tm.Opponent.MonsterZone[x] = null;
+                                }
+                                break;
+                            case "Raise Body Heat":
+                                if (card.type == "Dinosaur")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Red Medicine":
+                                tm.TurnPlayer.LP += 500;
+                                break;
+                            case "Remove Trap":
+                                Card target;
+                                if (target.card_frame = "Trap")
+                                {
+                                    target.Owner.Graveyard.Add(SpellTrapZone[target]);
+                                    target.Owner.SpellTrapZone[target] = null;
+
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'S':
+                        switch (name)
+                        {
+                            case "Silver Bow and Arrow":
+                                if (card.type == "Fairy")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Sogen":
+                                if (card.type == "Beast-Warrior" || card.type == "Warrior")
+                                {
+                                    card.Atk += 200;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 200;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Sparks":
+                                tm.Opponent.LP -= 200;
+                                break;
+                            case "Stop Defense":
+                                Card target.Position = 1;
+                                break;
+                            case "Swords of Revealing Light":
+                                int initialEffect = 1;
+                                int SwordsTurnCounter = 1;
+                                if (initialEffect == 1)
+                                {
+                                    for (int x = 0; x < 5; x++)
+                                    {
+                                        if (tm.Opponent.MonsterZone[x] != null)
+                                        {
+                                            if (tm.Opponent.MonsterZone[x].FaceDown == true)
+                                            {
+                                                tm.Opponent.MonsterZone[x].FaceDown == false;
+                                                tm.Opponent.MonsterZone[x].Flip == false;
+                                            }
+                                        }
+                                    }
+                                }
+                                while (SwordsTurnCounter != 3)
+                                {
+                                    if (tm.TurnPlayer != card.Owner)
+                                    {
+                                        for (int x = 0; x < 5; x++)
+                                        {
+                                            tm.TurnPlayer.MonsterZone[x].CanAttack == false;
+                                        }
+                                    }
+                                    SwordsTurnCounter++;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'T':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'U':
+                        switch (name)
+                        {
+                            case "Umi":
+                                if (card.type == "Fish" || card.type == "Sea Serpent" || card.type == "Thunder" || card.type == "Aqua")
+                                {
+                                    card.Atk += 200;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 200;
+                                    card.UnoriginalDef = true;
+                                }
+                                if (card.type == "Machine" || card.type == "Pyro")
+                                {
+                                    card.Atk -= 200;
+                                    card.UnoriginalAtk = true;
+                                    card.Def -= 200;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'V':
+                        switch (name)
+                        {
+                            case "Vile Germs":
+                                if (card.type == "Plant")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            case "Violet Crystal":
+                                if (card.type == "Zombie")
+                                {
+                                    card.Atk += 300;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'W':
+                        switch (name)
+                        {
+                            case "Wasteland":
+                                if (card.type == "Dinosaur" || card.type == "Zombie" || card.type == "Rock")
+                                {
+                                    card.Atk += 200;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 300;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'X':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'Y':
+                        switch (name)
+                        {
+                            case "Yami":
+                                if (card.type == "Fiend" || card.type == "Spellcaster")
+                                {
+                                    card.Atk += 200;
+                                    card.UnoriginalAtk = true;
+                                    card.Def += 200;
+                                    card.UnoriginalDef = true;
+                                }
+                                if (card.type == "Fairy")
+                                {
+                                    card.Atk -= 200;
+                                    card.UnoriginalAtk = true;
+                                    card.Def -= 200;
+                                    card.UnoriginalDef = true;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'Z':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '1':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '2':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '3':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '4':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '5':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '6':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '7':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '8':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '9':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    default: //0
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                }
+            }
+            */
+            else if (card_frame == "Effect")
+            {
+                switch (firstletter = name[0])
+                {
+                    case 'A':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'B':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'C':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'D':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'E':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'F':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'G':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'H':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'I':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'J':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'L':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'M':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'N':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'O':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'P':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'Q':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'R':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'S':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'T':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'U':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'V':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'W':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'X':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'Y':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case 'Z':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '1':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '2':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '3':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '4':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '5':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '6':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '7':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '8':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    case '9':
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                    default: //0
+                        switch (name)
+                        {
+                            default:
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
+    }
+}
